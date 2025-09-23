@@ -10,13 +10,15 @@ import {
 import { ProfileInfoField } from "./ProfileInfoField";
 import { ProfileAvatar } from "./ProfileAvatar";
 
+interface CardProfileProps {
+    userData: {
+      name: string;
+      email: string;
+      avatar: string; 
+    };
+  }
 
-export function CardProfile() {
-  const userData = {
-    name: "Daniel Silva",
-    email: "daniel.silva@example.com",
-    imageUrl: "https://github.com/shadcn.png",
-  };
+export function CardProfile({userData}: CardProfileProps) {
   const initials = userData.name
     .split(" ")
     .map((n) => n[0])
@@ -30,7 +32,7 @@ export function CardProfile() {
         <p className="text-black">Profile picture</p>
         <ProfileAvatar
           className="h-[3.5rem] w-[3.5rem] mb-4" 
-          src={userData.imageUrl}
+          src={userData.avatar}
           fallback={initials}
         />
       </CardHeader>

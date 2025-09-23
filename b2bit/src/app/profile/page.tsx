@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { api } from "@/lib/api"; 
 import { CardProfile } from "@/components/CardProfile";
 import { Button } from "@/components/ui/button";
+import { API_ENDPOINTS } from "@/lib/endpoints";
 
 interface UserData {
   name: string;
   email: string;
+  avatar: string;
 }
 
 export default function ProfilePage() {
@@ -20,7 +22,7 @@ export default function ProfilePage() {
       try {
         setLoading(true);
 
-        const response = await api.get('/users/me');
+        const response = await api.get(API_ENDPOINTS.AUTH.PROFILE);
         setUserData(response.data);
       } catch (err) {
         setError('Não foi possível carregar os dados do perfil.');
@@ -50,7 +52,7 @@ export default function ProfilePage() {
         </div>
     </header>
     <main className="flex min-h-screen flex-col items-center p-24 bg-profile-blue">
-      <CardProfile></CardProfile>
+      <CardProfile userData={userData}></CardProfile>
     </main>
     </>
   );
