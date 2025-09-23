@@ -22,6 +22,7 @@ const config = {
       colors: {
         'b2bit-blue': '#02274F',
         'b2bit-blue-dark': '#02224F',
+        'profile-blue': '#F1F5F9',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
