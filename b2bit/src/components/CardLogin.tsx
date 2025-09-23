@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardAction,
@@ -7,9 +7,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Logo } from "@/components/Logo";
 
 export function CardLogin() {
@@ -35,16 +35,24 @@ export function CardLogin() {
               <div className="flex items-center">
                 <Label htmlFor="password">Password</Label>
               </div>
-              <Input id="password" type="password" required className="bg-gray-100" />
+              <Input
+                id="password"
+                type="password"
+                required
+                className="bg-gray-100"
+              />
             </div>
           </div>
         </form>
       </CardContent>
       <CardFooter className="flex-col gap-2">
-        <Button type="submit" className="w-full bg-b2bit-blue text-white hover:bg-b2bit-blue-100">
+        <Button
+          type="submit"
+          className="w-full bg-b2bit-blue text-white hover:bg-b2bit-blue-100"
+        >
           Sign-in
         </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }
