@@ -7,10 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { ProfileInfoField } from "./ProfileInfoField";
 import { ProfileAvatar } from "./ProfileAvatar";
+
 
 export function CardProfile() {
   const userData = {

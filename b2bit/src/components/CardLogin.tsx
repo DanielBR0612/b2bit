@@ -11,8 +11,33 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Logo } from "@/components/Logo";
+import { useState } from "react";
+import { useRouter } from 'next/navigation';
+import { api } from '@/lib/api';
 
 export function CardLogin() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const router = useRouter();
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setError('');
+
+    try {
+      const response = await api.post('/login', { email, password });
+
+      const { token } = response.data;
+
+      localStorage.setItem('authToken', token);
+
+      router.push('/profile');
+
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Falha no login');
+    }
+  };
   return (
     <Card className="h-full w-full max-w-sm shadow-2xl">
       <CardHeader>

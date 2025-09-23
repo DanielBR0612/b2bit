@@ -1,7 +1,45 @@
+"use client"; 
+
+import { useEffect, useState } from "react";
+import { api } from "@/lib/api"; 
 import { CardProfile } from "@/components/CardProfile";
 import { Button } from "@/components/ui/button";
 
+interface UserData {
+  name: string;
+  email: string;
+}
+
 export default function ProfilePage() {
+  const [userData, setUserData] = useState<UserData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        setLoading(true);
+
+        const response = await api.get('/users/me');
+        setUserData(response.data);
+      } catch (err) {
+        setError('Não foi possível carregar os dados do perfil.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProfile();
+  }, []); 
+
+  if (loading) {
+    return <div className="flex justify-center items-center h-screen">Carregando...</div>;
+  }
+
+  if (error) {
+    return <div className="flex justify-center items-center h-screen text-red-500">{error}</div>;
+  }
+
   return (
     <>
     <header className="bg-white">
