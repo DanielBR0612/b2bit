@@ -5,7 +5,7 @@ import {
   } from "@/components/ui/avatar";
   
   interface ProfileAvatarProps {
-    src: string;         
+    src?: string;         
     fallback: string; 
     className?: string; 
   }
