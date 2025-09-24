@@ -29,36 +29,26 @@ export function CardLogin() {
       password: '',
     },
     onSubmit: async (values) => {
-      console.log("SUBMIT DO FORMIK FOI ACIONADO!", values);
       setError('');
       try {
         const response = await api.post(API_ENDPOINTS.AUTH.LOGIN, values);
         
-        // Esta linha está CORRETA, pois a resposta contém 'access' e 'refresh'
         const { tokens } = response.data;
         
-        console.log('2. RESPOSTA COMPLETA DA API:', response);
-        
-        // Vamos mover o redirecionamento para DENTRO da verificação
-        // router.push(API_ENDPOINTS.AUTH.PROFILE); // Removido daqui
-
-        // Esta verificação deveria funcionar.
         if (tokens && tokens.access && tokens.refresh) {
-          // Salvamos os tokens no localStorage
           localStorage.setItem('accessToken', tokens.access);
           localStorage.setItem('refreshToken', tokens.refresh);
-          
-          // E finalmente, redirecionamos para a página de perfil
           router.push('/profile');
         } else {
-          // Se a estrutura da resposta não for a esperada, mostramos um erro.
-          console.error("A resposta da API não contém o objeto 'tokens' com os valores de 'access' e 'refresh'. Resposta recebida:", response.data);
           setError("Resposta de login inválida do servidor.");
         }
 
       } catch (err: any) {
-        console.error("ERRO DETALHADO NO CATCH:", err);
-        setError(err.response?.data?.message || 'Falha no login');
+        if (err.response && err.response.status === 401) {
+          setError("E-mail ou senha inválidos.");
+        } else {
+          setError("Ocorreu um erro. Tente novamente mais tarde.");
+        }
       }
     },
   });
@@ -101,6 +91,15 @@ export function CardLogin() {
           </div>
         </form>
       </CardContent>
+
+      {error && (
+        <div className="px-6 pb-4"> 
+          <p className="text-sm font-medium text-red-500 text-center">
+            {error}
+          </p>
+        </div>
+      )}
+
       <CardFooter className="flex-col gap-2">
         <Button
           type="submit"

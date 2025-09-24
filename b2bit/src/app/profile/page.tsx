@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api"; 
 import { CardProfile } from "@/components/CardProfile";
-import { Button } from "@/components/ui/button";
 import { API_ENDPOINTS } from "@/lib/endpoints";
+import { HeaderProfile } from "@/components/HeaderProfile";
 
 interface UserData {
   name: string;
@@ -44,15 +44,9 @@ export default function ProfilePage() {
 
   return (
     <>
-    <header className="bg-white">
-    <div className="container mx-auto flex h-16 items-right justify-end px-4">
-          <Button className="bg-b2bit-blue text-white w-[20rem] mt-2">
-            Logout
-          </Button>
-        </div>
-    </header>
-    <main className="flex min-h-screen flex-col items-center p-24 bg-profile-blue">
-      <CardProfile userData={userData}></CardProfile>
+    <HeaderProfile></HeaderProfile>
+    <main className="flex min-h-screen flex-col items-center p-24 bg-profile-blue text-black">
+      {userData && <CardProfile userData={userData}></CardProfile>}
     </main>
     </>
   );

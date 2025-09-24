@@ -27,12 +27,12 @@ export function CardProfile({userData}: CardProfileProps) {
     .toUpperCase(); 
 
   return (
-    <Card className="h-full w-full max-w-sm shadow-2xl text-gray-500 text-xs bg-white">
+    <Card className="h-full w-full max-w-sm shadow-2xl text-gray-500 text-xs font-light text-black bg-white">
       <CardHeader className="flex flex-col items-center text-center justify-center">
-        <p className="text-black">Profile picture</p>
+        <p>Profile picture</p>
         <ProfileAvatar
           className="h-[3.5rem] w-[3.5rem] mb-4" 
-          src={userData.avatar}
+          src={userData.avatar.high}
           fallback={initials}
         />
       </CardHeader>

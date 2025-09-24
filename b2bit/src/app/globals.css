@@ -2,14 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* As 3 linhas acima são as diretivas obrigatórias do Tailwind CSS v3.
-  Todo o resto do código deve vir depois delas.
-*/
-
 @layer base {
   html {
 
-    font-size: 114.5%;
+    font-size: 100.5%;
 
   }
   :root {
