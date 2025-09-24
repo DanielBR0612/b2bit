@@ -9,7 +9,10 @@ import { HeaderProfile } from "@/components/HeaderProfile";
 interface UserData {
   name: string;
   email: string;
-  avatar: string;
+  avatar: {
+    high: string,
+    medium: string
+  };
 }
 
 export default function ProfilePage() {
