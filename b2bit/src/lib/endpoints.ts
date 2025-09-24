@@ -1,5 +1,3 @@
-// src/lib/endpoints.ts
-
 export const API_ENDPOINTS = {
     AUTH: {
       LOGIN: '/login/',
