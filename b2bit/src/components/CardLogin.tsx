@@ -3,13 +3,11 @@
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
   CardFooter,
-  CardHeader,
-  CardTitle,
+  CardHeader
 } from "@/components/ui/card";
+import axios from 'axios';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Logo } from "@/components/Logo";
@@ -43,11 +41,13 @@ export function CardLogin() {
           setError("Resposta de login inválida do servidor.");
         }
 
-      } catch (err: any) {
-        if (err.response && err.response.status === 401) {
-          setError("E-mail ou senha inválidos.");
+      } catch (err: unknown) { 
+        console.error("ERRO DETALHADO NO CATCH:", err);
+
+        if (axios.isAxiosError(err) && err.response) {
+          setError(err.response.data.message || 'Falha no login');
         } else {
-          setError("Ocorreu um erro. Tente novamente mais tarde.");
+          setError('Ocorreu um erro inesperado. Verifique sua conexão.');
         }
       }
     },
