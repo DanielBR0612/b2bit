@@ -14,7 +14,10 @@ interface CardProfileProps {
     userData: {
       name: string;
       email: string;
-      avatar: string; 
+      avatar: {
+        high: string,
+        medium: string
+      }; 
     };
   }
 
