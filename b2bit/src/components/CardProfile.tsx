@@ -32,7 +32,7 @@ export function CardProfile({userData}: CardProfileProps) {
         <p>Profile picture</p>
         <ProfileAvatar
           className="h-[3.5rem] w-[3.5rem] mb-4" 
-          src={userData.avatar.high}
+          src={userData?.avatar?.high}
           fallback={initials}
         />
       </CardHeader>
