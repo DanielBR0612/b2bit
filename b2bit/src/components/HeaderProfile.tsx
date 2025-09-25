@@ -24,8 +24,8 @@ export function HeaderProfile() {
       };
     return(
         <header className="bg-white">
-            <div className="container mx-auto flex h-16 items-right justify-end px-4">
-                  <Button onClick={handleLogout} className="bg-b2bit-blue text-white w-[20rem] mt-2">
+            <div className="container mx-auto flex h-[4rem] items-right justify-end px-4">
+                  <Button onClick={handleLogout} className="bg-b2bit-blue font-bold text-base text-white w-[18rem] h-[2.7rem] mt-2">
                     Logout
                   </Button>
                 </div>
