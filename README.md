@@ -17,7 +17,7 @@ Siga estes passos para configurar o ambiente de desenvolvimento:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/DanielBR0612/b2bit.git](https://github.com/DanielBR0612/b2bit.git)
+    git clone https://github.com/DanielBR0612/b2bit.git
     ```
 
 2.  **Navegue até o diretório do projeto:**
