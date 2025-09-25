@@ -2,16 +2,12 @@
 
 Projeto para entrar na B2Bit
 
-## 🚀 Começando
-
-Estas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
-
-### ✅ Pré-requisitos
+### Pré-requisitos
 
 * **Node.js**: Este projeto requer a versão 18.17 ou superior. Você pode verificar sua versão com o comando `node -v`.
 * **Gerenciador de Pacotes**: Você pode usar `npm`, `yarn`, `pnpm` ou `bun`. Os exemplos abaixo usarão `npm`, que já vem instalado com o Node.js.
 
-### 📦 Instalação
+### Instalação
 
 Siga estes passos para configurar o ambiente de desenvolvimento:
 
@@ -35,7 +31,7 @@ Siga estes passos para configurar o ambiente de desenvolvimento:
     yarn install
     ```
 
-## 🖥️ Rodando a Aplicação
+## Rodando a Aplicação
 
 Com o ambiente configurado, você pode iniciar a aplicação
 
