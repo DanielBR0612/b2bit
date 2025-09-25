@@ -8,8 +8,6 @@ Estas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 ### ✅ Pré-requisitos
 
-Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
-
 * **Node.js**: Este projeto requer a versão 18.17 ou superior. Você pode verificar sua versão com o comando `node -v`.
 * **Gerenciador de Pacotes**: Você pode usar `npm`, `yarn`, `pnpm` ou `bun`. Os exemplos abaixo usarão `npm`, que já vem instalado com o Node.js.
 
@@ -19,12 +17,12 @@ Siga estes passos para configurar o ambiente de desenvolvimento:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+    git clone [https://github.com/DanielBR0612/b2bit.git](https://github.com/DanielBR0612/b2bit.git)
     ```
 
 2.  **Navegue até o diretório do projeto:**
     ```bash
-    cd seu-repositorio
+    cd b2bit
     ```
 
 3.  **Instale as dependências:**
@@ -39,7 +37,7 @@ Siga estes passos para configurar o ambiente de desenvolvimento:
 
 ## 🖥️ Rodando a Aplicação
 
-Com o ambiente configurado, você pode iniciar a aplicação em diferentes modos.
+Com o ambiente configurado, você pode iniciar a aplicação
 
 ### Modo de Desenvolvimento
 
@@ -47,3 +45,11 @@ Para iniciar o servidor de desenvolvimento, execute o seguinte comando. Isso per
 
 ```bash
 npm run dev
+
+```
+
+### Modo de Produção
+
+Acesse o link do deploy:
+
+https://b2bit-flax.vercel.app/
