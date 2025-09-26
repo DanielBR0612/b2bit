@@ -18,7 +18,9 @@ const config = {
       },
     },
     extend: {
-      // ESTA SEÇÃO É A CHAVE PARA RESOLVER O ERRO
+      boxShadow: {
+        'dark': '0 60px 80px -20px rgb(0 0 0 / 0.4)',
+      },
       colors: {
         'b2bit-blue': '#02274F',
         'b2bit-blue-dark': '#02224F',

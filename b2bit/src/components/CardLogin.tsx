@@ -54,11 +54,13 @@ export function CardLogin() {
   });
 
   return (
-    <Card className="h-full w-full max-w-sm shadow-2xl">
-      <CardHeader>
-        <Logo />
+    <Card className="w-full max-w-sm shadow-2xl">
+
+      <CardHeader className="p-8">
+        <Logo className="h-full w-full" />
       </CardHeader>
-      <CardContent>
+      
+      <CardContent className="px-8">
         <form id="login-form" onSubmit={formik.handleSubmit}>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
@@ -93,18 +95,18 @@ export function CardLogin() {
       </CardContent>
 
       {error && (
-        <div className="px-6 pb-4"> 
+        <div className="px-8 pb-4"> 
           <p className="text-sm font-medium text-red-500 text-center">
             {error}
           </p>
         </div>
       )}
-
-      <CardFooter className="flex-col gap-2">
+      
+      <CardFooter className="flex-col gap-6 px-8 pb-8 pt-4">
         <Button
           type="submit"
           form="login-form"
-          className="w-full bg-b2bit-blue text-white hover:bg-b2bit-blue-dark"
+          className="w-full h-[3rem] font-bold bg-b2bit-blue text-white hover:bg-b2bit-blue-dark"
         >
           Sign-in
         </Button>
